@@ -1,0 +1,16 @@
+1) - CDC général
+   - CDC perso
+2) Analyse :
+	- diagramme des cas d'utilisation
+	- (diagramme de séquence)
+   Spécifications :
+	- aspects techniques du projet (lux, intensité lumineuse)
+3) Conception
+	- diagramme de paquets
+	- diagramme de classes
+	- diagramme de séquences
+4) Codage (partie importantes du code)
+5) Tests unitaires
+6) Tests d'intégration
+7) Recette
+	- Annexes : - code entier
