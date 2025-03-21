@@ -1,0 +1,13 @@
+3 modes
+- auto (pilotage automatique des actionneurs)
+- manuel (pilotage manuel des actionneurs)
+- debug (simulation des capteurs)
+
+3 modes de lumière
+- blanche
+- blanc chaud + rouge
+- toutes les lumières allumées
+
+envoyer des données à maël en xml
+- valeur des capteurs
+- états des lumières

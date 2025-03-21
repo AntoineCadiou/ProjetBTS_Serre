@@ -1,0 +1,77 @@
+@startuml
+' Déclaration des classes principales
+class "ModuleEclairage" {
+  - lampes: List<Lampe>
+  - mode: ModeEclairage
+  - capteurLuminosite: CapteurLuminosite
+  + allumerLampes(): void
+  + eteindreLampes(): void
+  + changerMode(mode: ModeEclairage): void
+  + lireLuminosite(): float
+  + configurerEclairage(config: Configuration): void
+}
+
+class "Lampe" {
+  - etat: boolean
+  - intensite: int
+  + allumer(): void
+  + eteindre(): void
+  + ajusterIntensite(intensite: int): void
+}
+
+class "CapteurLuminosite" {
+  - luminositeActuelle: float
+  + mesurerLuminosite(): float
+}
+
+class "ModeEclairage" {
+  - nomMode: String
+  + appliquerMode(): void
+}
+
+class "Configuration" {
+  - mode: ModeEclairage
+  - heuresAllumage: String
+  - heuresExtinction: String
+  + getConfig(): String
+  + setConfig(mode: ModeEclairage, heuresAllumage: String, heuresExtinction: String): void
+}
+
+class "SiteDistant" {
+  - configuration: Configuration
+  + configurerLampes(config: Configuration): void
+  + programmerMode(mode: ModeEclairage): void
+  + activerModeAutomatique(): void
+}
+
+' Relations entre les classes
+ModuleEclairage "1" -- "*" Lampe : "comporte"
+ModuleEclairage "1" -- "1" CapteurLuminosite : "utilise"
+ModuleEclairage "1" -- "1" ModeEclairage : "applique"
+ModuleEclairage "1" -- "1" Configuration : "utilise"
+Configuration "1" -- "1" ModeEclairage : "associé"
+SiteDistant "1" -- "1" Configuration : "gère"
+SiteDistant "1" -- "1" ModeEclairage : "configure"
+
+' Déclaration des méthodes
+ModuleEclairage : + allumerLampes()
+ModuleEclairage : + eteindreLampes()
+ModuleEclairage : + changerMode(mode: ModeEclairage)
+ModuleEclairage : + lireLuminosite()
+ModuleEclairage : + configurerEclairage(config: Configuration)
+
+Lampe : + allumer()
+Lampe : + eteindre()
+Lampe : + ajusterIntensite(intensite: int)
+
+CapteurLuminosite : + mesurerLuminosite()
+
+ModeEclairage : + appliquerMode()
+
+Configuration : + getConfig()
+Configuration : + setConfig(mode: ModeEclairage, heuresAllumage: String, heuresExtinction: String)
+
+SiteDistant : + configurerLampes(config: Configuration)
+SiteDistant : + programmerMode(mode: ModeEclairage)
+SiteDistant : + activerModeAutomatique()
+@enduml

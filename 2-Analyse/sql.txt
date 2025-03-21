@@ -1,0 +1,58 @@
+Nom de la base :
+ParametresCulture
+Nom de tables :
+RythmeEclairage
+- IdRytEcl
+- NomRytEcl
+- DurPer
+- RatAll
+- IdCom
+IntensitesEclairage
+- IdIntEcl
+- IdEspBot
+- Lum
+- IdCom
+SpectresEclairage
+- IdSpeEcl
+- IdStaDev
+- FreSpeMin
+- FreSpeMax
+- TemCouMin
+- TemCouMax
+- IdCom
+
+
+CODE MYSQL :
+-- Création de la base de données
+CREATE DATABASE BDD_ParametresCulture;
+
+-- Utilisation de la base de données
+USE BDD_ParametresCulture;
+
+-- Création de la table RythmeEclairage
+CREATE TABLE RythmeEclairage (
+    IdRytEcl INT AUTO_INCREMENT PRIMARY KEY, -- Identifiant unique, clé primaire
+    NomRytEcl VARCHAR(255) NOT NULL,         -- Nom du rythme d'éclairage
+    DurPer INT NOT NULL,                     -- Durée de la période (en heures, par exemple)
+    RatAll FLOAT NOT NULL,                   -- Ratio d'allumage
+    IdCom INT                                -- Identifiant de communication (clé étrangère potentielle)
+);
+
+-- Création de la table IntensitesEclairage
+CREATE TABLE IntensitesEclairage (
+    IdIntEcl INT AUTO_INCREMENT PRIMARY KEY, -- Identifiant unique, clé primaire
+    IdEspBot INT NOT NULL,                   -- Identifiant de l'espèce botanique
+    Lum FLOAT NOT NULL,                      -- Intensité lumineuse
+    IdCom INT                                -- Identifiant de communication (clé étrangère potentielle)
+);
+
+-- Création de la table SpectresEclairage
+CREATE TABLE SpectresEclairage (
+    IdSpeEcl INT AUTO_INCREMENT PRIMARY KEY, -- Identifiant unique, clé primaire
+    IdStaDev INT NOT NULL,                   -- Identifiant de l'état du dispositif
+    FreSpeMin FLOAT NOT NULL,                -- Fréquence spectrale minimale
+    FreSpeMax FLOAT NOT NULL,                -- Fréquence spectrale maximale
+    TemCouMin FLOAT NOT NULL,                -- Température de couleur minimale
+    TemCouMax FLOAT NOT NULL,                -- Température de couleur maximale
+    IdCom INT                                -- Identifiant de communication (clé étrangère potentielle)
+);

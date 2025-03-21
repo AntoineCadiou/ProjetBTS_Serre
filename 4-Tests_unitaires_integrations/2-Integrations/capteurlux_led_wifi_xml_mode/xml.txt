@@ -1,0 +1,11 @@
+POUR LE MODE AUTOMATIQUE :
+<mode>auto</mode>
+
+POUR LE MODE MANUEL:
+<mode>manuel</mode><etat_led>off</etat_led>
+<mode>manuel</mode><etat_led>on</etat_led>
+
+POUR LE MODE PROGRAMME :
+<mode>prog</mode>
+<programme><heure_debut>11</heure_debut><minute_debut>16</minute_debut>
+<heure_fin>18</heure_fin><minute_fin>20</minute_fin></programme>
