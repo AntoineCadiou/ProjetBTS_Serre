@@ -1,0 +1,37 @@
+@startuml
+
+node "Utilisateur" {
+    node "Appareil utilisateur" {
+        [Interface WiFi]
+        [Application mobile/web]
+    }
+}
+
+node "Site distant" {
+    node "Serveur distant" {
+        [Service de configuration]
+        [API REST]
+    }
+}
+
+node "Système de gestion de l'éclairage" {
+    node "Module de contrôle" {
+        [Carte Arduino/ESP]
+        [Gestion des lampes]
+        [Lecture des capteurs]
+    }
+    node "Capteur de luminosité" {
+        [Mesure de luminosité]
+    }
+    node "Lampe de culture" {
+        [Allumage/extinction]
+    }
+}
+
+"Appareil utilisateur" --> "Serveur distant" : Communication WiFi
+"Appareil utilisateur" --> "Module de contrôle" : Commandes manuelles (WiFi)
+"Serveur distant" --> "Module de contrôle" : Téléchargement des configurations (WiFi)
+"Capteur de luminosité" --> "Module de contrôle" : Données de luminosité (Connexion locale)
+"Module de contrôle" --> "Lampe de culture" : Pilotage des lampes (Connexion locale)
+
+@enduml

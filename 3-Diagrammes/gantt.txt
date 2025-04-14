@@ -1,0 +1,45 @@
+Je veux que tu me fasses le code que je vais mettre dans plantext pour faire mon diagramme
+de Gantt, en fonction des informations que je vais te donner. Le projet a une durée de
+12 semaines.
+
+La première semaine du projet j'ai fait la partie analyse avec la création des différents
+diagrammes.
+Ensuite j'ai commencé à coder et en même temps j'ai préparé des tests unitaires et
+d'intégrations et je me suis également documenté sur les composants :
+- j'ai testé des capteurs analogiques de luminosité qui me renvoyaient des valeurs
+entre 0 et 1023.
+- j'ai testé des capteurs de lumière qui me renvoyaient des valeurs en lux.
+- j'ai fait le cablâge des lampes de la serre avec des transistors.
+A partir de la semaine 8 et jusqu'à la fin j'ai fait la rédaction du rapport de projet.
+Puis jusqu'à la fin du projet je finalise le code et j'intègre avec les autres
+membres du groupe.
+
+
+
+
+
+Le projet s’est déroulé sur une période de 12 semaines, découpée en plusieurs phases clés :
+
+    Semaines 1 à 2 – Analyse :
+    Le projet a commencé par une phase d’analyse, durant laquelle j’ai réalisé différents diagrammes (diagramme de cas d’utilisation,
+    diagramme de séquence, etc.) afin de bien comprendre les besoins et structurer le développement à venir.
+
+    Semaines 3 à 12 – Développement, tests et documentation :
+    À partir de la semaine 3, j’ai entamé la phase de développement et de tests, qui s’est poursuivie jusqu’à la fin du projet. Cette période comprend :
+
+        La documentation sur les composants utilisée dès la semaine 3 pour mieux comprendre le fonctionnement des capteurs et composants électroniques.
+
+        Une première série de tests sur les capteurs analogiques de luminosité (valeurs de 0 à 1023), réalisée de la semaine 3 à la semaine 5.
+
+        Des tests sur des capteurs de lumière exprimant l’éclairement en lux, effectués sur les semaines 6 et 7.
+
+        Une seconde phase de tests des capteurs analogiques, poursuivie de la semaine 8 à la semaine 12, pour affiner les mesures et les intégrer au
+        système global.
+
+        Le câblage des lampes de la serre à l’aide de transistors a été effectué lors de la semaine 8.
+
+    Semaines 8 à 12 – Rédaction et finalisation :
+    En parallèle du développement, j’ai rédigé le rapport de projet dès la semaine 8, en continuant jusqu’à la fin. J’ai également travaillé à la
+    finalisation du code et à son intégration avec les membres du groupe, pour assurer un système fonctionnel et cohérent.
+
+Ce planning m’a permis de structurer efficacement mon travail tout en laissant de la place aux ajustements et à la collaboration en fin de projet.

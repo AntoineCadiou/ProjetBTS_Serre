@@ -1,0 +1,45 @@
+@startuml
+
+class CapteurLumiereAnalogique {
+    - int pin
+    + CapteurLumiereAnalogique(int broche)
+    + int lireValeur()
+}
+
+class Zone {
+    - CapteurLumiereAnalogique* capteurs
+    - int nombreCapteurs
+    - int pinLED
+    - const int SEUIL = 975
+    + Zone(CapteurLumiereAnalogique* listeCapteurs, int nbCapteurs, int brocheLED)
+    + float calculerMoyenne()
+    + void verifierSeuilEtControleLED(String nomZone)
+}
+
+class GestionZones {
+    - Zone* zones
+    - int nombreZones
+    + GestionZones(Zone* listeZones, int nbZones)
+    + void verifierToutesLesZones()
+}
+
+class WiFiManager {
+    + WiFiManager()
+    + void connecterWiFi()
+    + bool estConnecte()
+}
+
+class DataSender {
+    - WiFiClient wifiClient
+    - HttpClient httpClient
+    + DataSender()
+    + void envoyerDonnees(const String& xmlData)
+}
+
+CapteurLumiereAnalogique --* Zone
+Zone --* GestionZones
+GestionZones -- WiFiManager
+GestionZones -- DataSender
+WiFiManager -- DataSender
+
+@enduml

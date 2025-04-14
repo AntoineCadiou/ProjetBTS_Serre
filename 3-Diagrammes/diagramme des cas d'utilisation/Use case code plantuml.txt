@@ -1,0 +1,79 @@
+/// USE CASE version 1 ///
+@startuml
+actor "Utilisateur" as User
+actor "Site distant" as RemoteSite
+
+usecase "Assurer l'éclairage dans la serre" as UC1
+usecase "Pilotage manuel des lampes" as UC2
+usecase "Pilotage programmé des lampes" as UC3
+usecase "Pilotage automatique des lampes" as UC4
+usecase "Configurer les lampes à distance" as UC5
+usecase "Lire la luminosité ambiante" as UC6
+
+User --> UC2
+User --> UC3
+User --> UC4
+User --> UC6
+
+RemoteSite --> UC5
+RemoteSite --> UC3
+RemoteSite --> UC4
+
+UC1 .up.> UC2 : inclut
+UC1 .up.> UC3 : inclut
+UC1 .up.> UC4 : inclut
+UC3 .down.> UC5 : inclut
+UC6 .down.> UC4 : inclut
+@enduml
+
+/// USE CASE version 2 ///
+@startuml
+actor "Utilisateur" as User
+actor "Site distant" as RemoteSite
+actor "Capteur de luminosité" as LightSensor
+
+usecase "Assurer l'éclairage dans la serre" as UC1
+usecase "Pilotage manuel des lampes" as UC2
+usecase "Pilotage programmé des lampes" as UC3
+usecase "Pilotage automatique des lampes" as UC4
+usecase "Configurer les lampes à distance" as UC5
+usecase "Lire la luminosité ambiante" as UC6
+usecase "Recevoir configuration des lampes" as UC7
+usecase "Communiquer commande manuelle" as UC8
+usecase "Programmer l'éclairage" as UC9
+usecase "Configurer modes d'éclairage" as UC10
+usecase "Intégrer données capteur de luminosité" as UC11
+usecase "Valider éclairage selon luminosité ambiante" as UC12
+usecase "Modifier paramètres à distance" as UC13
+usecase "Vérifier état des lampes" as UC14
+usecase "Démarrer/arrêter lampe de culture" as UC15
+
+User --> UC2 : "Utiliser WIFI pour pilotage manuel"
+User --> UC3 : "Programmer éclairage depuis interface"
+User --> UC4 : "Activer mode automatique"
+User --> UC6 : "Lire la luminosité ambiante"
+User --> UC14 : "Vérifier l'état des lampes"
+User --> UC15 : "Démarrer ou arrêter les lampes"
+
+RemoteSite --> UC5 : "Configurer les lampes à distance"
+RemoteSite --> UC3 : "Programmer les lampes"
+RemoteSite --> UC4 : "Activer mode automatique"
+RemoteSite --> UC13 : "Modifier paramètres à distance"
+RemoteSite --> UC7 : "Recevoir configuration des lampes"
+RemoteSite --> UC10 : "Configurer modes d'éclairage"
+
+LightSensor --> UC6 : "Fournir données de luminosité"
+LightSensor --> UC11 : "Envoyer données de luminosité"
+
+UC1 .up.> UC2 : "Inclut"
+UC1 .up.> UC3 : "Inclut"
+UC1 .up.> UC4 : "Inclut"
+UC4 .down.> UC12 : "Inclut"
+UC3 .down.> UC9 : "Inclut"
+UC3 .down.> UC10 : "Inclut"
+UC2 .down.> UC8 : "Inclut"
+UC5 .down.> UC7 : "Inclut"
+UC6 .down.> UC11 : "Inclut"
+UC11 .down.> UC12 : "Inclut"
+UC12 .down.> UC15 : "Inclut"
+@enduml
